@@ -1,0 +1,51 @@
+h2{
+    color:indianred;
+    font-size:30px;
+}
+
+p, ul, ol{
+    color:cornflowerblue
+}
+
+.delete{
+    color:darkslateblue
+}
+
+h1[align="right"]{
+    color :lightgrey
+}
+
+.image1:hover{
+    border-radius: 50%;
+    transform: translate(30px,-30px);
+}
+
+.image2:hover{
+    border-radius: 40px;
+    opacity: 0.5;
+    transform: rotate(90deg);
+}
+
+.image3:hover{
+    filter: grayscale(80%);
+    transform: scale(2);
+}
+
+.image4:hover{
+    filter:blur(5px);
+    transform: skew(-45deg,15deg);
+}
+
+@keyframes move_image{
+    0% {transform: translate(30px);}
+    25% {transform: translate(60px);}
+    50% {transform: translate(90px);}
+    75% {transform: translate(120px);}
+    100% {transform: translate(150px);}
+}
+
+.image_animation{
+    animation-name: move_image;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
