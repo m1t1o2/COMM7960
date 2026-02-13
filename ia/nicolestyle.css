@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ffb6ff, #b6e0ff, #fff2b6);
+    background-size: 400% 400%;
+    animation: gradientMove 10s infinite alternate;
+    height: 200vh;
+}
+
+@keyframes gradientMove {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    backdrop-filter: invert(1);
+}
+
+.section1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.section1 h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    animation: float 3s ease-in-out infinite;
+}
+
+.section1 p {
+    margin-top: 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.sticker {
+    position: absolute;
+    width: 120px;
+    cursor: grab;
+    transition: transform 0.3s;
+}
+
+.sticker:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.section2 {
+    color: white;
+    font-size: 2rem;
+}
+
+.s2 {
+    color: #ec99d0;
+    text-shadow: 0 0 20px #ec7fc8;
+    font-size: 1.5rem;
+    font-style:italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 400px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.image0 {
+    transform: translate(100px,0px);
+    border-radius: 50%;
+    filter:blur(5px);
+}
+.image0:hover{
+    border-radius: 50%;
+    filter:blur(0px);
+    transform: translate(100px,0px) scale(2);
+}
+
+.table {
+    text-align: center;
+    transform: translate(80px,0px);
+    filter:blur(5px);
+}
+.table:hover{
+    filter:blur(0px);
+}
+
+.image1 {
+    transform: translate(50px,0px);
+    border-radius: 50%;
+    filter:blur(5px);
+}
+.image1:hover{
+    border-radius: 50%;
+    filter:blur(0px);
+    transform: scale(2); 
+}
+
+.image2 {
+    transform: translate(250px,-20px);
+    border-radius: 50%;
+    filter:blur(5px);
+}
+.image2:hover{
+    border-radius: 50%;
+    filter:blur(0px);
+    transform: translate(250px,-20px) scale(2);
+}
+
+.button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ef8dce;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.button:hover {
+    box-shadow: 0 0 20px white;
+    transform: scale(1.1);
+}
+
+.music-controller {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 12px 18px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+
+    z-index: 9999;
+}
+
+.music-controller button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+
+    transition: all 0.3s ease;
+}
+
+.music-controller button:hover {
+    transform: scale(1.1);
+}
+
+.music-info {
+    font-size: 14px;
+    color: white;
+}

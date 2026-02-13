@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nicoooole</title>
+        <link rel="stylesheet" href="nicolestyle.css"/>
+
+<div class="cursor"></div>
+
+<div class="music-controller">
+    <button id="musicToggle">▶</button>
+    <div class="music-info">pl4yg1rl</div>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music/bgm.mp3" type="audio/mp3">
+</audio>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const music = document.getElementById("bgMusic");
+    const musicToggle = document.getElementById("musicToggle");
+
+    let isPlaying = false;
+
+    musicToggle.addEventListener("click", function () {
+        if (!isPlaying) {
+            music.play().then(() => {
+                musicToggle.innerText = "⏸";
+            }).catch(err => {
+                console.log("播放失败:", err);
+            });
+        } else {
+            music.pause();
+            musicToggle.innerText = "▶";
+        }
+        isPlaying = !isPlaying;
+    });
+});
+</script>
+
+<section class="section1">
+    <h1 align="center">Welcome to My Universe</h1>
+    <p align="center">built by Nicole</p>
+    <button class="button" onclick="scrollDown()">Enter</button>
+
+    <!-- stickers -->
+    <img src="image/emoji1.png"
+         class="sticker"
+         style="top:20%; left:10%;">
+
+    <img src="image/emoji2.png"
+         class="sticker"
+         style="top:60%; right:15%;">
+</section>
+
+<section class="section2">
+    <h1 align="center">🌠<em>ABOUT ME </em>🌠</h1>
+</section>
+
+<section class="s2">
+    <h3>my cats</h3>
+    <h3>my Friday</h3>
+    <h3>my frds</h3>
+</section>
+
+<section class="images">
+    <h3><img src="image/cat1.jpg" width="60%" height="60%" class="image0">
+    <br><br><br><img src="image/cat2.jpg" width="60%" height="60%" class="image0">
+    <br><br><br><img src="image/cat3.jpg" width="60%" height="60%" class="image0"></h3>
+    <h3><table border="1" class="table">
+            <caption></caption>
+            <tr>
+                <th>TIME</th>
+                <th>TODO</th>
+                <th>NOTE</th>
+            </tr>
+            <tr>
+                <td>00:00<br>~<br>14:00</td>
+                <td>sleeping</td>
+                <td>zzzz</td>
+            </tr>
+            <tr>
+                <td>14:30<br>~<br>17:20</td>
+                <td>on class</td>
+                <td>COMM7960</td>
+            </tr>
+            <tr>
+                <td>17:30<br>~<br>18:20</td>
+                <td>dinner</td>
+                <td><img src="image/food2.jpg" width="40%" height="40%">  <img src="image/food3.jpg" width="40%" height="40%"></td>
+            </tr>
+            <tr>
+                <td>18:30<br>~<br>21:20</td>
+                <td>on class</td>
+                <td>COMM7640</td>
+            </tr>
+            <tr>
+                <td>22:00<br>~<br>00:00</td>
+                <td>games&<br>K-dramas</td>
+                <td><img src="image/game.jpg" width="50%" height="50%"></td>
+            </tr>
+        </table></h3>
+       <h3><img src="image/frd1.jpg" width="50%" height="50%" class="image1">
+        <br><img src="image/frd2.jpg" width="40%" height="40%" class="image2">
+        <br><img src="image/frd3.jpg" width="50%" height="50%" class="image1">
+        <br><img src="image/frd4.jpg" width="40%" height="40%" class="image2">
+    <h3></h3>
+</section>
+
+
+
+<script>
+// 自定义光标
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
+
+// 滚动按钮
+function scrollDown() {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+}
+</script>
+
+
+</body>
+</html>
